@@ -8,18 +8,15 @@
 		"Spicylemon"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": ""
+		"homepage": "https://github.com/Spicylemon2623/Butchers-Delight-Resown",
+		"sources": "https://github.com/Spicylemon2623/Butchers-Delight-Resown"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/butchers_delight_rechopped/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.takerudavis.Butchers_delight_rechopped"
-		],
-		"client": [
-			"net.takerudavis.Butchers_delight_rechoppedClient"
+			"net.takerudavis.ButchersDelightRechopped"
 		]
 	},
 	"mixins": [
@@ -31,7 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
-		"minecraft": "~1.20.1",
+		"minecraft": ">=1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
 	}
