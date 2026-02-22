@@ -14,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
@@ -81,47 +80,49 @@ public class HookBlock extends Block {
         if (!level.getBlockState(belowPos).canBeReplaced())
             return InteractionResult.PASS;
 
-        if (!level.isClientSide) {
-            BlockState carcassState = carcassBlock.defaultBlockState();
+        if (level.isClientSide)
+            return InteractionResult.sidedSuccess(true);
 
-            CompoundTag nbt = stack.getTag();
-            if (nbt != null && nbt.contains("BlockStateTag", 10)) {
-                CompoundTag stateTag = nbt.getCompound("BlockStateTag");
-                StateDefinition<Block, BlockState> definition = carcassState.getBlock().getStateDefinition();
+        BlockState carcassState = carcassBlock.defaultBlockState();
 
-                for (String key : stateTag.getAllKeys()) {
-                    Property<?> property = definition.getProperty(key);
-                    if (property != null) {
-                        String value = stateTag.getString(key);
-                        carcassState = setValueHelper(carcassState, property, value);
-                    }
+        CompoundTag nbt = stack.getTag();
+        if (nbt != null && nbt.contains("BlockStateTag", 10)) {
+            CompoundTag stateTag = nbt.getCompound("BlockStateTag");
+            StateDefinition<Block, BlockState> definition = carcassState.getBlock().getStateDefinition();
+
+            for (String key : stateTag.getAllKeys()) {
+                Property<?> property = definition.getProperty(key);
+                if (property != null) {
+                    String value = stateTag.getString(key);
+                    carcassState = setValueHelper(carcassState, property, value);
                 }
             }
-
-            carcassState = carcassState.setValue(AbstractHookableCarcassBlock.HOOKED, true)
-                    .setValue(AbstractHookableCarcassBlock.FACING, state.getValue(HookBlock.FACING));
-
-            level.setBlockAndUpdate(belowPos, carcassState);
-
-            if (level.getBlockEntity(belowPos) instanceof CarcassBlockEntity carcassBlockEntity) {
-                if (nbt != null && nbt.contains("BlockEntityTag", 10)) {
-                    CompoundTag beTag = nbt.getCompound("BlockEntityTag").copy();
-
-                    beTag.putInt("x", belowPos.getX());
-                    beTag.putInt("y", belowPos.getY());
-                    beTag.putInt("z", belowPos.getZ());
-
-
-                    carcassBlockEntity.load(beTag);
-                }
-            }
-
-            if (!player.isCreative()) {
-                stack.shrink(1);
-            }
-            return InteractionResult.SUCCESS;
         }
-        return InteractionResult.sidedSuccess(true);
+
+        carcassState = carcassState.setValue(AbstractHookableCarcassBlock.HOOKED, true)
+                .setValue(AbstractHookableCarcassBlock.FACING, state.getValue(HookBlock.FACING));
+
+        level.setBlockAndUpdate(belowPos, carcassState);
+
+        if (level.getBlockEntity(belowPos) instanceof CarcassBlockEntity carcassBlockEntity) {
+            if (nbt != null && nbt.contains("BlockEntityTag", 10)) {
+                CompoundTag beTag = nbt.getCompound("BlockEntityTag").copy();
+
+                beTag.putInt("x", belowPos.getX());
+                beTag.putInt("y", belowPos.getY());
+                beTag.putInt("z", belowPos.getZ());
+
+                carcassBlockEntity.load(beTag);
+                carcassBlockEntity.setChanged();
+
+                level.sendBlockUpdated(belowPos, carcassState, carcassState, Block.UPDATE_CLIENTS);
+            }
+        }
+
+        if (!player.isCreative()) {
+            stack.shrink(1);
+        }
+        return InteractionResult.SUCCESS;
     }
 
     private static <T extends Comparable<T>> BlockState setValueHelper(BlockState state, Property<T> property, String value) {
