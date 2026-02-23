@@ -16,7 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.takerudavis.ButchersDelightRechopped"
+			"net.takerudavis.butchers_delight_rechopped.ButchersDelightRechopped"
+		],
+		"client": [
+			"net.takerudavis.butchers_delight_rechopped.ButchersDelightRechoppedClient"
 		]
 	},
 	"mixins": [

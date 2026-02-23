@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=intact": {
+      "model": "butchers_delight_rechopped:block/carcass/chicken/intact"
+    },
+    "stage=sheared": {
+      "model": "butchers_delight_rechopped:block/carcass/chicken/plucked"
+    }
+  }
+}

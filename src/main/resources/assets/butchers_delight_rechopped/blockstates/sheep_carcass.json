@@ -1,0 +1,268 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": false,
+        "facing": "north"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/intact",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": false,
+        "facing": "east"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/intact",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": false,
+        "facing": "south"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/intact",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": false,
+        "facing": "west"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/intact",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": true,
+        "facing": "north"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/intact",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": true,
+        "facing": "east"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/intact",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": true,
+        "facing": "south"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/intact",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "stage": "intact",
+        "hooked": true,
+        "facing": "west"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/intact",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": false,
+        "facing": "north"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/sheared",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": false,
+        "facing": "east"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/sheared",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": false,
+        "facing": "south"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/sheared",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": false,
+        "facing": "west"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/sheared",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": true,
+        "facing": "north"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/sheared",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": true,
+        "facing": "east"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/sheared",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": true,
+        "facing": "south"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/sheared",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "stage": "sheared",
+        "hooked": true,
+        "facing": "west"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/sheared",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": false,
+        "facing": "north"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/skinned",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": false,
+        "facing": "east"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/skinned",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": false,
+        "facing": "south"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/skinned",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": false,
+        "facing": "west"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/skinned",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": true,
+        "facing": "north"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/skinned",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": true,
+        "facing": "east"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/skinned",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": true,
+        "facing": "south"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/skinned",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "stage": "skinned",
+        "hooked": true,
+        "facing": "west"
+      },
+      "apply": {
+        "model": "butchers_delight_rechopped:block/carcass/sheep/hooked/skinned",
+        "y": 270
+      }
+    }
+  ]
+}

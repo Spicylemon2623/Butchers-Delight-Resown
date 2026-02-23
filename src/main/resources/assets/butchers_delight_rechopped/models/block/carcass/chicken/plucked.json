@@ -1,0 +1,6 @@
+{
+  "parent": "butchers_delight_rechopped:block/carcass/chicken",
+  "textures":{
+    "0": "butchers_delight_rechopped:block/carcass/chicken/plucked"
+  }
+}

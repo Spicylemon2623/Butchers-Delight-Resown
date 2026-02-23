@@ -4,6 +4,9 @@
     64,
     32
   ],
+  "textures": {
+    "particle": "#0"
+  },
   "elements": [
     {
       "name": "body",
